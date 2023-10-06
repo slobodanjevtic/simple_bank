@@ -12,6 +12,7 @@ import (
 
 func CreateRandomAccount(t *testing.T) Account {
 	balance, err := faker.RandomInt(0, 1000, 1)
+
 	arg := CreateAccountParams {
 		Owner: faker.FirstName(),
 		Balance: int64(balance[0]),

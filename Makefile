@@ -25,4 +25,7 @@ server:
 clean:
 	go clean -modcache
 
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc test server clean
+mock:
+	mockgen -package mockdb -destination database/mock/store.go github.com/slobodanjevtic/simple_bank/database/sqlc Store
+
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc test server clean mock
